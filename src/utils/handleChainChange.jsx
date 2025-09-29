@@ -1,4 +1,4 @@
-export const hancleChainChange = async (setWeb3State) => {
+export const handleChainChange = async (setWeb3State) => {
   const chainIdHex = await window.ethereum.request({
     method: "eth_ChainId",
   });
