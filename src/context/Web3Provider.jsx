@@ -1,21 +1,39 @@
 import { useState } from "react";
 import { getWeb3State } from "../utils/getWeb3State";
 import { Web3Context } from "./web3Context";
+
 const Web3Provider = ({ children }) => {
   const [web3State, setWeb3State] = useState({
     contractInstance: null,
     selectedAccount: null,
     chainId: null,
   });
+
   const handleWallet = async () => {
-    const { contractInstance, selectedAccount, chainId } = await getWeb3State();
-    setWeb3State({ contractInstance, selectedAccount, chainId });
+    try {
+      const { contractInstance, selectedAccount, chainId } =
+        await getWeb3State();
+      setWeb3State({ contractInstance, selectedAccount, chainId });
+      console.log( selectedAccount,contractInstance);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <>
-      <Web3Context.Provider value={web3State}>{children}</Web3Context.Provider>
-      <button onClick={handleWallet}>Connect to Wallet</button>
+      <Web3Context.Provider value={web3State}>
+        {children}
+      </Web3Context.Provider>
+
+      {web3State.selectedAccount ? (
+        <h2>Wallet Connected: {web3State.selectedAccount}</h2>
+      ) : (
+        <>
+          <button onClick={handleWallet}>Connect Wallet</button>
+          <h2>Wallet Not Connected</h2>
+        </>
+      )}
     </>
   );
 };
