@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Web3Context } from "./web3Context";
 
-const Web3Provider = () => {
+const Web3Provider = ({children}) => {
   const [web3State, setWeb3State] = useState({
     contractInstance: null,
     selectedAccount: null,
