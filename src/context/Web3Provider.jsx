@@ -21,21 +21,18 @@ const Web3Provider = ({ children }) => {
     }
   };
   useEffect(() => {
-    window.ethereum.on("accountsChanged", ()=>handleAccountChange(setWeb3State));
-    window.ethereum.on("chainChanged", ()=>handleChainChange(setWeb3State));
+    window.ethereum.on("accountsChanged", () =>
+      handleAccountChange(setWeb3State)
+    );
+    window.ethereum.on("chainChanged", () => handleChainChange(setWeb3State));
   });
   return (
     <>
-      <Web3Context.Provider value={web3State}>{children}</Web3Context.Provider>
+      <Web3Context.Provider value={{ web3State, handleWallet }}>
+        {children}
+      </Web3Context.Provider>
 
-      {web3State.selectedAccount ? (
-        <h2>Wallet Connected: {web3State.selectedAccount}</h2>
-      ) : (
-        <>
-          <button onClick={handleWallet}>Connect Wallet</button>
-          <h2>Wallet Not Connected</h2>
-        </>
-      )}
+
     </>
   );
 };
