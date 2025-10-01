@@ -23,8 +23,8 @@ const VotingTimePeriod = () => {
       console.log("startDelay:", _startDelay, "duration:", _duration);
 
       if (contractInstance) {
-        await contractInstance.setVotingPeriod(_startDelay, _duration);
-        console.log("Voting period set successfully");
+        // await contractInstance.setVotingPeriod(_startDelay, _duration);
+        // console.log("Voting period set successfully");
       }
     } catch (error) {
       console.error("Error setting voting period:", error);

@@ -7,9 +7,9 @@ const AnnounceWinner = () => {
     const getWinner = async () => {
       try {
         if (contractInstance) {
-          const winnerCandidate = await contractInstance.announceVotingResult();
-          console.log(winnerCandidate);
-          setWinner(winnerCandidate);
+        //   const winnerCandidate = await contractInstance.announceVotingResult();
+        //   console.log(winnerCandidate);
+        //   setWinner(winnerCandidate);
         }
       } catch (error) {
         console.error("Error fetching winner:",error);

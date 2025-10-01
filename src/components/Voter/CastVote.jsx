@@ -12,8 +12,8 @@ const CastVote = () => {
     const candidateId = candidateIdRef.current.value;
     try {
       if(contractInstance){
-       const tx = await contractInstance.castVote(voterId, candidateId);
-      await tx.wait();
+    //    const tx = await contractInstance.castVote(voterId, candidateId);
+    //   await tx.wait();
       console.log("Vote Cast succesful");
       setStatus("Vote cast successfully");
       }  else {

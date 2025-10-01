@@ -8,9 +8,9 @@ const GetVoterList = () => {
     const fetchVoterList = async () => {
       try {
         if (contractInstance) {
-          const voters = await contractInstance.getVoterList();
-          setVoterList(voters);
-          console.log(voters);
+          // const voters = await contractInstance.getVoterList();
+          // setVoterList(voters);
+          // console.log(voters);
         }
       } catch (error) {
         console.error(error);
