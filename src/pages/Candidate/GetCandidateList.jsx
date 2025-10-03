@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useWeb3Context } from "../../context/useWeb3Context";
 const GetCandidateList = () => {
-  // const { contractInstance } = useWeb3Context();
+  const { web3State } = useWeb3Context();
+  const { contractInstance } = web3State;
   const [candidateList, setCandidateList] = useState([]);
   // useEffect(() => {
   //   const fetchCandidateList = async () => {

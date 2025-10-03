@@ -48,9 +48,7 @@ contract Vote {
     mapping(address => bool) public isCandidate;
     mapping(address => bool) public isVoter;
 
-    /* ============================
-       Events
-       ============================ */
+    
     event CandidateRegistered(address indexed candidate, uint indexed candidateId, string name);
     event VoterRegistered(address indexed voter, uint indexed voterId, string name);
     event VoteCast(address indexed voter, uint indexed candidateId);
@@ -96,9 +94,7 @@ contract Vote {
         _;
     }
 
-    /* ============================
-       Registration functions
-       ============================ */
+   
 
     /// @notice Register a candidate (EOA). Commissioner cannot register as candidate.
     function registerCandidate(

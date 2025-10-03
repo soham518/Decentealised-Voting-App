@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { useWeb3Context } from "../../context/useWeb3Context";
 const RegisterCandidate = () => {
-  // const { contractInstance } = useWeb3Context();
+  const { web3State } = useWeb3Context();
+const { contractInstance } = web3State;
   const nameRef = useRef(null);
   const ageRef = useRef(null);
   const genderRef = useRef(null);
