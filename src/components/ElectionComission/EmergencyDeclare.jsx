@@ -9,10 +9,10 @@ const { contractInstance } = web3State;
   const declareEmergency = async () => {
     try {
       if (contractInstance) {
-        // const tx = await contractInstance.emergencyStopVoting();
-        // setStatus("Transaction submitted... waiting for confirmation");
+        const tx = await contractInstance.emergencyStopVoting();
+        setStatus("Transaction submitted... waiting for confirmation");
 
-        // await tx.wait(); // wait for confirmation on-chain
+        await tx.wait(); // wait for confirmation on-chain
         setStatus(" Emergency declared successfully!");
         console.log("Emergency declared successfully");
       }

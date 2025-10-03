@@ -17,9 +17,9 @@ const { contractInstance } = web3State;
 
       console.log(name, age, gender);
 
-      // await contractInstance.registerVoter(name, age, gender);
+      await contractInstance.registerVoter(name, age, gender);
 
-      // console.log("Voter registered successfully");
+      console.log("Voter registered successfully");
     } catch (error) {
       console.error(error);
     }
