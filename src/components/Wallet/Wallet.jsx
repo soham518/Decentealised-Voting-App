@@ -1,17 +1,19 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 import { useWeb3Context } from "../../context/useWeb3Context";
 const Wallet = () => {
-  // const {web3State, handleWallet} = useWeb3Context();
+  const { handleWallet, web3State } = useWeb3Context();
+  const { selectedAccount } = web3State;
+  const navigateTo = useNavigate();
+  useEffect(() => {
+    if (selectedAccount) {
+      navigateTo("/register-voter");
+    }
+  },[selectedAccount]);
   return (
     <>
       <div>Wallet Component</div>
-      {/* {web3State.selectedAccount ? (
-        <h2>Wallet Connected: {web3State.selectedAccount}</h2>
-      ) : (
-        <>
-          <button onClick={handleWallet}>Connect Wallet</button>
-          <h2>Wallet Not Connected</h2>
-        </>
-      )} */}
+      <button onClick={handleWallet}>Connect Waller</button>
     </>
   );
 };

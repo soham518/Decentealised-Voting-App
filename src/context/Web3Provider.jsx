@@ -27,8 +27,10 @@ const Web3Provider = ({ children }) => {
     window.ethereum.on("chainChanged", () => handleChainChange(setWeb3State));
   });
   return (
+    //value feild always takes objects
     <>
-      <Web3Context.Provider value={{ web3State,handleWallet }}>
+    
+      <Web3Context.Provider value={{ web3State, handleWallet }}>
         {children}
       </Web3Context.Provider>
 

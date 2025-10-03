@@ -11,7 +11,7 @@ const routes = createBrowserRouter([
     path: "/",
     element: (
       <div>
-        <Navigation></Navigation>
+        
         <Wallet />
       </div>
     ),
