@@ -1,6 +1,6 @@
 import { useWeb3Context } from "../../context/useWeb3Context";
 const Wallet = () => {
-  const {handleWallet} = useWeb3Context();
+  const {web3State, handleWallet} = useWeb3Context();
   return (
     <>
       <div>Wallet Component</div>
