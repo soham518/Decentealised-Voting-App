@@ -57,9 +57,7 @@ contract Vote {
     event VotingPeriodSet(uint startTime, uint endTime);
     event EmergencyStopped();
 
-    /* ============================
-       Constructor
-       ============================ */
+    
     constructor(address _gldToken, uint _maxCandidates) {
         require(_gldToken != address(0), "Invalid token address");
         require(_maxCandidates > 0, "maxCandidates must be > 0");

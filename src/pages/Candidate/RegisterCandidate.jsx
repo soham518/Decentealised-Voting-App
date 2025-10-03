@@ -17,7 +17,7 @@ const { contractInstance } = web3State;
       console.log(name, age, gender, party);
         await contractInstance.registerCandidate(name,party,age,gender);
 
-        console.log("candidate registered successfully");
+        console.log("candidate registered successfully",name,age,gender,party);
     } catch (error) {
       console.error(error);
     }
